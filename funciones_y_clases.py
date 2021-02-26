@@ -1,15 +1,21 @@
 global1 = 34
 
-def cambiar_global():
+def cambiar_global(a):
     '''Cambiar una variable global
 
     Esta función debe asignarle a la variable global `global1` el valor que se
     le pasa como único argumento posicional.
     '''
-    pass
+    # pass
+    global global1
+    global1 = a
+    print(global1)
 
+# print(global1)
+# cambiar_global(12)
+# print(global1)
 
-def anio_bisiesto():
+def anio_bisiesto(anio):
     '''Responder si el entero pasado como argumento es un año bisiesto
     
     Para determinar si un año es bisiesto, se deben tener en cuenta las 
@@ -21,7 +27,20 @@ def anio_bisiesto():
 
     Retorna True o False
     '''
-    pass
+    if anio % 400 == 0:
+      # return True
+      print(True)
+    elif anio % 100 == 0:
+      # return False
+      print(False)
+    elif anio % 4 == 0:
+      # return True
+      print(True)
+    else:
+      # return False
+      print(False)
+
+# anio_bisiesto(2021)
 
 def contar_valles():
     r'''Contar el número de valles

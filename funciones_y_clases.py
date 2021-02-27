@@ -35,25 +35,36 @@ def anio_bisiesto(anio):
 
 # anio_bisiesto(2020)
 
-def contar_valles():
+def contar_valles(lista):
     r'''Contar el número de valles
 
-    Esta función debe recibir como argumento una lista de -1's, 0's y 1's, y lo
+    Esta función debe recibir como argumento una lista de -1's, 0's y 1's, y lo 
     que representan son las subidas y las bajadas en una ruta de caminata. -1
-    representa un paso hacia abajo, el 0 representa un paso hacia adelante y el
+    representa un paso hacia abajo, el 0 representa un paso hacia adelante y el 
     1 representa un paso hacia arriba, entonces por ejemplo, para la lista
     [-1,1,0,1,1,-1,0,0,1,-1,1,1,-1,-1] representa la siguiente ruta:
 
                 /\
          /\__/\/  \
-       _/
+       _/  
      \/
 
-    El objetivo de esta función es devolver el número de valles que estén
+    El objetivo de esta función es devolver el número de valles que estén 
     representados en la lista, que para el ejemplo que se acaba de mostrar es
     de 3 valles.
     '''
-    pass
+    aux = 0
+    neg = 0
+    for item in lista:
+      if (item == -1):
+        neg = 1
+      if (neg == 1 and item == 1):
+        aux += 1
+        neg = 0
+
+    return aux
+
+#print(contar_valles([-1,1,0,1,1,-1,0,0,1,-1,1,1,-1,-1]))
 
 def saltando_rocas():
     '''Mínimo número de saltos en las rocas
@@ -71,7 +82,7 @@ def saltando_rocas():
     '''
     pass
 
-# def pares_medias(*args):
+def pares_medias(*args):
     '''Contar pares de medias
 
     Esta función debe recibir como argumento una lista de enteros. Cada elemento
@@ -81,15 +92,14 @@ def saltando_rocas():
     uno de los colores que se encuentren en la lista, y los valores son la
     cantidad de pares que se han encontrado para cada color.
     '''
-#     lista = []
-#     for i in args:
-#       lista.append(i)
-#     pares = {i:lista.count(i) for i in lista}
-#     print(pares)
+    pares = {}
+    lista = []
+    for i in args:
+      lista.append(i)
+      pares[i]= int(lista.count(i)/2)
+    print(pares)
 
-# pares_medias(1,2,3,4,5,3,2,1,1,1,1,2,3,3,4,2,1,1,23,3,4,1)
-
-
+pares_medias(1,1,1,2,2,4,4,4,4,4,4,4,4,4,4,5,5)
 # Crear una clase llamada `ListaComa` que reciba en su constructor un iterable
 # con el valor inicial para una lista que se guardará en un atributo llamado
 # `lista`. Implementar el método __str__ para que devuelva un string con todos

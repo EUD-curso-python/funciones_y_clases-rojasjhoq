@@ -99,6 +99,17 @@ def pares_medias(*args):
       pares[i]= int(lista.count(i)/2)
     print(pares)
 
+
+  aux = 0
+    neg = 0
+    for item in lista:
+      if (item == -1):
+        neg = 1
+      if (neg == 1 and item == 1):
+        aux += 1
+        neg = 0
+
+    return aux
 pares_medias(1,1,1,2,2,4,4,4,4,4,4,4,4,4,4,5,5)
 # Crear una clase llamada `ListaComa` que reciba en su constructor un iterable
 # con el valor inicial para una lista que se guardará en un atributo llamado

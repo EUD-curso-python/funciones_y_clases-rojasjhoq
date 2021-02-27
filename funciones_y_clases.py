@@ -16,6 +16,7 @@ def cambiar_global(a):
 # print(global1)
 
 def anio_bisiesto(anio):
+  
     '''Responder si el entero pasado como argumento es un año bisiesto
 
     Para determinar si un año es bisiesto, se deben tener en cuenta las
@@ -28,11 +29,11 @@ def anio_bisiesto(anio):
     Retorna True o False
     '''
     if anio % 400 == 0 or (anio % 100 != 0 and anio % 4 == 0):
-      print(True)
+      return True
     else:
-      print(False)
+      return  False
 
-# anio_bisiesto(2021)
+# anio_bisiesto(2020)
 
 def contar_valles():
     r'''Contar el número de valles
@@ -70,7 +71,7 @@ def saltando_rocas():
     '''
     pass
 
-def pares_medias(*args):
+# def pares_medias(*args):
     '''Contar pares de medias
 
     Esta función debe recibir como argumento una lista de enteros. Cada elemento
@@ -80,13 +81,13 @@ def pares_medias(*args):
     uno de los colores que se encuentren en la lista, y los valores son la
     cantidad de pares que se han encontrado para cada color.
     '''
-    lista = []
-    for i in args:
-      lista.append(i)
-    pares = {i:lista.count(i) for i in lista}
-    print(pares)
+#     lista = []
+#     for i in args:
+#       lista.append(i)
+#     pares = {i:lista.count(i) for i in lista}
+#     print(pares)
 
-pares_medias(1,2,3,4,5,3,2,1,1,1,1,2,3,3,4,2,1,1,23,3,4,1)
+# pares_medias(1,2,3,4,5,3,2,1,1,1,1,2,3,3,4,2,1,1,23,3,4,1)
 
 
 # Crear una clase llamada `ListaComa` que reciba en su constructor un iterable

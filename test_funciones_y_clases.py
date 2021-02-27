@@ -50,6 +50,7 @@ for i in range(20):
         c += 1; i += 2 if i+2 < l and ll[i+2] == 0 else 1
     saltando_rocas.append(('saltando_rocas', c, [ll], {}))
 
+
     ll = []
     res = {}
     sup = {}

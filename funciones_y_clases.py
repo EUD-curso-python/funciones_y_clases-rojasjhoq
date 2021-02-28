@@ -99,17 +99,6 @@ def pares_medias(*args):
       pares[i]= int(lista.count(i)/2)
     print(pares)
 
-
-  aux = 0
-    neg = 0
-    for item in lista:
-      if (item == -1):
-        neg = 1
-      if (neg == 1 and item == 1):
-        aux += 1
-        neg = 0
-
-    return aux
 pares_medias(1,1,1,2,2,4,4,4,4,4,4,4,4,4,4,5,5)
 # Crear una clase llamada `ListaComa` que reciba en su constructor un iterable
 # con el valor inicial para una lista que se guardará en un atributo llamado
@@ -117,19 +106,17 @@ pares_medias(1,1,1,2,2,4,4,4,4,4,4,4,4,4,4,5,5)
 # los elementos del atributo `lista` unidos a través de comas. Ejemplo:
 # si `lista` es [1,2,3,4], __str__ debe devolver '1,2,3,4'
 
-# class ListaComa:
-  
-#   def __init__(self, a):
-#     list
+class ListaComa(object):
+    def __init__(self):
+        self.lista = []
+    def insert(self, e):
+      self.lista.append(e)
+      
+    def __str__(self):
+      self.lista = ",".join(map(str, self.lista))
+      return self.lista
 
-  
-#     print(lista)
 
-#   def __str__(self):
-#         cadena=self.nombre+","+self.apellido
-#         return cadena
-
-# ListaComa[1,2,3,4]
 
 # Crear una clase llamada `Persona` que reciba en su constructor como 1er
 # argumento un iterable con el valor inicial para una lista que se guardará en

@@ -119,16 +119,21 @@ def pares_medias(*args):
 #     return self.elementos
 
 class ListaComa():
+  lista = []
   elementos = None
-  def __init__(self):
-    self.lista = []
-  def insert(self, e):
-    cadena = str(e)
-    self.lista.append(cadena)    
-  def __str__(self):
+  def __init__(self,*args):
+    self.args = args
+  def insert(self, *e):
+    for i in e:
+      # cadena = str(i)
+      self.lista.append(i) 
     print(self.lista)
-    self.elementos= ",".join(self.lista)
-    return self.elementos
+   
+  def __str__(self):
+    return ",".join(map(str, self.lista))
+    # self.elementos= ",".join(self.lista)
+    # return self.elementos
+
 
 # lista=ListaComa()
 # lista.insert(1)

@@ -99,7 +99,7 @@ def pares_medias(*args):
       pares[i]= int(lista.count(i)/2)
     print(pares)
 
-pares_medias(1,1,1,2,2,4,4,4,4,4,4,4,4,4,4,5,5)
+# pares_medias(1,1,1,2,2,4,4,4,4,4,4,4,4,4,4,5,5)
 # Crear una clase llamada `ListaComa` que reciba en su constructor un iterable
 # con el valor inicial para una lista que se guardará en un atributo llamado
 # `lista`. Implementar el método __str__ para que devuelva un string con todos
@@ -114,6 +114,14 @@ class ListaComa():
   def __str__(self):
     self.lista = ",".join(map(str, self.lista))
     return self.lista
+
+# lista=ListaComa()
+# lista.insert(1)
+# lista.insert(2)
+# lista.insert(3)
+# lista.insert(4)
+# print(lista)
+
 
 # Crear una clase llamada `Persona` que reciba en su constructor como 1er
 # argumento un iterable con el valor inicial para una lista que se guardará en
@@ -131,6 +139,24 @@ class ListaComa():
 # si `nombres` es ['Juan', 'David'] y `apellidos` es ['Torres', 'Salazar'],
 # el método `nombre completo` debe devolver  'Juan David Torres Salazar'
 
+class Persona:
+  nombres = []
+  apellidos = []
+
+  def __init__(self,nombres,apellidos):
+    self.nombre = nombres
+    self.apellido = apellidos
+
+  def agregarNombre(self,e):
+    cadena = str(e)
+    self.nombres.append(cadena.capitalize())
+  
+  def agregarApellido(self,e):
+    cadena = str(e)
+    self.apellidos.append(cadena.capitalize())
+
+  def nombre_completo(self):
+    return " ".join(self.nombres) + ' ' + " ".join(self.apellidos)
 
 
 

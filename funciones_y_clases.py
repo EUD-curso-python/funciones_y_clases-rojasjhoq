@@ -199,3 +199,21 @@ print(persona.nombre_completo())
 # si `fecha_nacimiento` es 1985-10-21 y la fecha actual es 2020-10-20, el método
 # `edad` debe devover 35.
 
+import datetime
+class Persona1(Persona):
+  def __init__(self, nombres, apellidos, fecha_nacimiento):
+    super().__init__(nombres, apellidos)
+    self.fecha_nacimiento = fecha_nacimiento
+    def edad(self):
+      currentDate = datetime.datetime.utcnow()
+      year = currentDate.year - self.fecha_nacimiento.year
+      if (currentDate.month < self.fecha_nacimiento.month):
+        year -= 1
+      elif (currentDate.month == self.fecha_nacimiento.month):
+        if (currentDate.day < self.fecha_nacimiento.day):
+          year -= 1
+        return year
+
+
+
+person2 = Persona1(['gustavo', 'adolfo'],['moreno', 'muñoz'], datetime.datetime.strptime('1990-07-14', '%Y-%m-%d'))

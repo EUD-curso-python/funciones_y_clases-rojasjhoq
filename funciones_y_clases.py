@@ -97,7 +97,7 @@ def pares_medias(*args):
     for i in args:
       lista.append(i)
       pares[i]= int(lista.count(i)/2)
-    print(pares)
+    # print(pares)
 
 # pares_medias(1,1,1,2,2,4,4,4,4,4,4,4,4,4,4,5,5)
 # Crear una clase llamada `ListaComa` que reciba en su constructor un iterable
@@ -106,14 +106,29 @@ def pares_medias(*args):
 # los elementos del atributo `lista` unidos a través de comas. Ejemplo:
 # si `lista` es [1,2,3,4], __str__ debe devolver '1,2,3,4'
 
+# class ListaComa():
+
+#   elementos = None
+
+#   def __init__(self):
+#     self.lista = []
+#   def insert(self, e):
+#     self.lista.append(e)    
+#   def __str__(self):
+#     self.elementos = ",".join(map(str, self.lista))
+#     return self.elementos
+
 class ListaComa():
+  elementos = None
   def __init__(self):
     self.lista = []
   def insert(self, e):
-    self.lista.append(e)    
+    cadena = str(e)
+    self.lista.append(cadena)    
   def __str__(self):
-    self.lista = ",".join(map(str, self.lista))
-    return self.lista
+    print(self.lista)
+    self.elementos= ",".join(self.lista)
+    return self.elementos
 
 # lista=ListaComa()
 # lista.insert(1)
@@ -158,8 +173,13 @@ class Persona:
   def nombre_completo(self):
     return " ".join(self.nombres) + ' ' + " ".join(self.apellidos)
 
-
-
+persona = Persona('juan','gomez')
+persona.agregarNombre('rodrigo')
+persona.agregarNombre('david')
+persona.agregarApellido('torres')
+persona.agregarApellido('salazar')
+# persona.agregarApellido('Rojas')
+persona.nombre_completo()
 
 # Crear una clase llamada `Persona1` que herede de la clase `Persona`, y que en su
 # constructor reciba además de los atributos del padre, una variable tipo

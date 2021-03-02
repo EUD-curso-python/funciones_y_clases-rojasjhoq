@@ -138,32 +138,55 @@ class ListaComa():
 # si `nombres` es ['Juan', 'David'] y `apellidos` es ['Torres', 'Salazar'],
 # el método `nombre completo` debe devolver  'Juan David Torres Salazar'
 
-class Persona:
-  nombres = []
-  apellidos = []
+# class Persona:
+#   nombres = []
+#   apellidos = []
 
-  def __init__(self,nombres,apellidos):
-    self.nombre = nombres
-    self.apellido = apellidos
+#   def __init__(self,nombres,apellidos):
+#     self.nombre = nombres
+#     self.apellido = apellidos
+#     str(self.nombre)
 
-  def agregarNombre(self,e):
-    cadena = str(e)
-    self.nombres.append(cadena.capitalize())
+#   def agregarNombre(self,e):
+#     cadena = str(e)
+#     self.nombres.append(cadena.capitalize())
   
-  def agregarApellido(self,e):
-    cadena = str(e)
-    self.apellidos.append(cadena.capitalize())
+#   def agregarApellido(self,e):
+#     cadena = str(e)
+#     self.apellidos.append(cadena.capitalize())
 
+#   def nombre_completo(self):
+#     return " ".join(self.nombres) + ' ' + " ".join(self.apellidos)
+
+# persona = Persona('juan','gomez')
+# persona.agregarNombre('rodrigo')
+# persona.agregarNombre('david')
+# persona.agregarApellido('torres')
+# persona.agregarApellido('salazar')
+# # persona.agregarApellido('Rojas')
+# persona.nombre_completo()
+
+class Persona:
+  def __init__(self,nombres,apellidos):
+    eval1 = all(isinstance(i, str) for i in nombres)
+    eval2 = all(isinstance(i, str) for i in apellidos)
+    
+    if not eval1:
+      raise Exception('Los elementos de nombres deben ser caracteres')
+
+    elif not eval2:
+      raise Exception('Los elementos de apellidos deben ser caracteres')
+
+    else:
+      self.nombres = [el.capitalize() for el in nombres]
+      self.apellidos = [el.capitalize() for el in apellidos]
+  
   def nombre_completo(self):
-    return " ".join(self.nombres) + ' ' + " ".join(self.apellidos)
+    return " ".join(self.nombres + self.apellidos)
+  
 
-persona = Persona('juan','gomez')
-persona.agregarNombre('rodrigo')
-persona.agregarNombre('david')
-persona.agregarApellido('torres')
-persona.agregarApellido('salazar')
-# persona.agregarApellido('Rojas')
-persona.nombre_completo()
+persona = Persona(['juan','andres'],['rodriguez','perez'])
+print(persona.nombre_completo())
 
 # Crear una clase llamada `Persona1` que herede de la clase `Persona`, y que en su
 # constructor reciba además de los atributos del padre, una variable tipo

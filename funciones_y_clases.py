@@ -82,7 +82,7 @@ def saltando_rocas():
     '''
     pass
 
-def pares_medias(*args):
+def pares_medias(lista):
     '''Contar pares de medias
 
     Esta función debe recibir como argumento una lista de enteros. Cada elemento
@@ -93,54 +93,33 @@ def pares_medias(*args):
     cantidad de pares que se han encontrado para cada color.
     '''
     pares = {}
-    lista = []
-    for i in args:
-      lista.append(i)
-      pares[i]= int(lista.count(i)/2)
-    # print(pares)
+    
+    for i in lista:
+      contador = int(lista.count(i)/2)
+      if contador > 0:
+        pares[i]= contador
+    return pares
 
-# pares_medias(1,1,1,2,2,4,4,4,4,4,4,4,4,4,4,5,5)
+# pares_medias([1,1,1,2,2,4,4,1,4,4,4,1,4,4,4,4,7,4,5,5,1])
+
 # Crear una clase llamada `ListaComa` que reciba en su constructor un iterable
 # con el valor inicial para una lista que se guardará en un atributo llamado
 # `lista`. Implementar el método __str__ para que devuelva un string con todos
 # los elementos del atributo `lista` unidos a través de comas. Ejemplo:
 # si `lista` es [1,2,3,4], __str__ debe devolver '1,2,3,4'
 
-# class ListaComa():
-
-#   elementos = None
-
-#   def __init__(self):
-#     self.lista = []
-#   def insert(self, e):
-#     self.lista.append(e)    
-#   def __str__(self):
-#     self.elementos = ",".join(map(str, self.lista))
-#     return self.elementos
-
 class ListaComa():
   lista = []
   elementos = None
-  def __init__(self,*args):
-    self.args = args
-  def insert(self, *e):
-    for i in e:
-      # cadena = str(i)
-      self.lista.append(i) 
-    print(self.lista)
-   
+  def __init__(self,args):
+    self.lista = args
+
   def __str__(self):
     return ",".join(map(str, self.lista))
-    # self.elementos= ",".join(self.lista)
-    # return self.elementos
 
+# lista=ListaComa([1,2,3,4])
+# print(str(lista))
 
-# lista=ListaComa()
-# lista.insert(1)
-# lista.insert(2)
-# lista.insert(3)
-# lista.insert(4)
-# print(lista)
 
 
 # Crear una clase llamada `Persona` que reciba en su constructor como 1er

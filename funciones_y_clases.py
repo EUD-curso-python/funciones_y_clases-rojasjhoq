@@ -212,3 +212,6 @@ class Persona1(Persona):
     if ((currentDate.month < self.fecha_nacimiento.month) and (currentDate.day,self.fecha_nacimiento.day)):
       year -= 1
     return year
+
+# person2 = Persona1(['Jhonatan', 'Rojas'],['moreno', 'muñoz'], datetime.datetime.strptime('1993-07-28', '%Y-%m-%d'))
+# person2.edad()

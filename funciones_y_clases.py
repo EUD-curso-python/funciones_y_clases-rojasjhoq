@@ -207,12 +207,8 @@ class Persona1(Persona):
     self.fecha_nacimiento = fecha_nacimiento
 
   def edad(self):
-    #isBiciesto = anio_bisiesto(self.fecha_nacimiento.year)
-    currentDate = datetime.datetime.utcnow()
+    currentDate = datetime.date.today()
     year = currentDate.year - self.fecha_nacimiento.year
-    if (currentDate.month < self.fecha_nacimiento.month):
+    if ((currentDate.month < self.fecha_nacimiento.month) and (currentDate.day,self.fecha_nacimiento.day)):
       year -= 1
-    elif (currentDate.month == self.fecha_nacimiento.month):
-      if (currentDate.day < self.fecha_nacimiento.day):
-        year -= 1
-        return year
+    return year

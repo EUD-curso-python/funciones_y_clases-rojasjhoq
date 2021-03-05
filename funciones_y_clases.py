@@ -213,5 +213,5 @@ class Persona1(Persona):
       year -= 1
     return year
 
-# person2 = Persona1(['Jhonatan', 'Rojas'],['moreno', 'muñoz'], datetime.datetime.strptime('1993-07-28', '%Y-%m-%d'))
+# person2 = Persona1(['Jhonatan', 'andres'],['rojas', 'quiñones'], datetime.datetime.strptime('1993-07-28', '%Y-%m-%d'))
 # person2.edad()
